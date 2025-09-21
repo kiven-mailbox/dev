@@ -1,0 +1,132 @@
+/* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }*/
+
+    /*body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }*/
+
+    .resume {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-text h1 {
+      font-size: 2.5rem;
+      color: #111;
+    }
+
+    .header-text p,
+    .header-text .contact {
+      margin-top: 8px;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .header-text .contact {
+      font-weight: bold;
+      color: #222;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #ddd;
+      margin-left: 20px;
+    }
+
+    section {
+      margin-top: 30px;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      border-bottom: 2px solid #ccc;
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+      color: #222;
+    }
+
+    .section-content {
+      margin-left: 10px;
+    }
+
+    .item {
+      margin-bottom: 15px;
+    }
+
+    .item-title {
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 6px;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 600px) {
+      .resume {
+        padding: 20px;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .profile-img {
+        margin-top: 15px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .header-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .header-text p,
+      .header-text .contact {
+        font-size: 0.9rem;
+      }
+
+      section h2 {
+        font-size: 1.2rem;
+      }
+
+      body {
+        font-size: 14px;
+      }
+
+      .item-title {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }

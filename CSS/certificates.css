@@ -1,0 +1,109 @@
+:root {
+     --bg-main: #5c5f64;
+     --bg-card: #d2d4d9;
+     --accent: #4f8cff;
+     --text-main: #e6eaf3;
+     --text-secondary: #b0b8c9;
+     --shadow: 0 6px 32px rgba(0,0,0,0.25);
+     --radius: 14px;
+ }
+ html, body {
+     height: 100%;
+ }
+ body {
+     font-family: 'Segoe UI', Arial, sans-serif;
+     background: var(--bg-main);
+     margin: 0;
+     padding: 0;
+     color: var(--text-main);
+     min-height: 100vh;
+ }
+ #certificates-container {
+     max-width: 900px;
+     margin: 48px auto;
+     background: var(--bg-card);
+     border-radius: var(--radius);
+     box-shadow: var(--shadow);
+     padding: 40px 28px;
+ }
+ h1 {
+     text-align: center;
+     color: dark;
+     margin-bottom: 38px;
+     font-size: 2.4rem;
+     letter-spacing: 1.5px;
+     font-weight: 700;
+     text-shadow: 0 2px 12px #b9bcc4;
+ }
+ .certificate {
+     display: flex;
+     flex-direction: row;
+     align-items: flex-start;
+     gap: 32px;
+     margin-bottom: 40px;
+     background: linear-gradient(120deg, #23283a 80%, #2a3350 100%);
+     border-radius: 10px;
+     padding: 22px 18px;
+     box-shadow: 0 2px 16px rgba(40,60,120,0.12);
+     transition: transform 0.18s, box-shadow 0.18s;
+     border: 1px solid #23283a;
+ }
+ .certificate:hover {
+     transform: translateY(-4px) scale(1.015);
+     box-shadow: 0 8px 32px rgba(79,140,255,0.13);
+     border-color: var(--accent);
+ }
+ .certificate img {
+     width: 100%;
+     max-width: 220px;
+     border-radius: 8px;
+     box-shadow: 0 2px 12px rgba(79,140,255,0.10);
+     background: #23283a;
+     border: 2px solid #23283a;
+     transition: border 0.2s;
+ }
+ .certificate:hover img {
+     border: 2px solid var(--accent);
+ }
+ .certificate p {
+     margin: 0;
+     color: var(--text-secondary);
+     font-size: 1.09rem;
+     line-height: 1.7;
+     letter-spacing: 0.01em;
+ }
+ .certificate strong {
+     color: var(--accent);
+     font-size: 1.13rem;
+     letter-spacing: 0.03em;
+ }
+ @media (max-width: 700px) {
+     #certificates-container {
+  padding: 14px 2vw;
+     }
+     .certificate {
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+     }
+     .certificate img {
+  max-width: 100%;
+     }
+ }
+ /* Scrollbar styling for dark mode */
+ ::-webkit-scrollbar {
+     width: 10px;
+     background: #23283a;
+ }
+ ::-webkit-scrollbar-thumb {
+     background: #2a3350;
+     border-radius: 8px;
+ }
+ ::selection {
+     background: #4f8cff44;
+ }
+ a {
+     color: var(--accent);
+     text-decoration: underline;
+ }
