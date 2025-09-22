@@ -1,5 +1,40 @@
-
-
-.cover-container {
-  max-width: 42em;
-}
+body {
+      background-color: #121212;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+    .card {
+      background-color: #1e1e1e;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .card a {
+      color: #f8f8f8;
+      text-decoration: none;
+    }
+    .card a:hover {
+      text-decoration: underline;
+    }
+    h1 {
+      font-weight: bold;
+      color: #f1f1f1;
+    }
+    .contact {
+      color: #bdbdbd;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .contact:hover {
+      color: #ffffff;
+    }
+    strong {
+      color: #ff9800;
+      font-weight: bold;
+    }
