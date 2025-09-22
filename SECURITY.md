@@ -1,21 +1,35 @@
-# Security Policy
+Security Policy – My Portfolio
+Supported Versions
 
-## Supported Versions
+This portfolio site is a personal project and not intended for large-scale deployment. However, I still maintain it for learning, security, and demonstration purposes.
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+| Version                | Supported       |
+| ---------------------- | --------------- |
+| Latest (main branch)   | ✅ Supported     |
+| Older versions / forks | ❌ Not supported |
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+If you notice a security issue with this portfolio (such as broken links, exposed information, or potential vulnerabilities), please report it responsibly.
 
-## Reporting a Vulnerability
+How to report:
+Open an issue on the GitHub repository
 
-Use this section to tell people how to report a vulnerability.
+or contact me directly via email: cantilakiven.mailbox01@gmail.com
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+What to include in your report:
+
+A clear description of the issue
+
+Steps to reproduce (if applicable)
+
+Suggested fixes or improvements (optional but appreciated)
+
+Response process:
+
+I will review the report within 7 days.
+
+If valid, I’ll patch the issue as soon as possible.
+
+You’ll be acknowledged in the commit or changelog unless you request otherwise.
+
+Important:
+Please do not exploit or share potential vulnerabilities publicly before they are fixed.
