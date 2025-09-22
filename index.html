@@ -19,32 +19,54 @@
 <body class="background-color">
   <!-- Navigation -->
   <header class="bg-dark">
-      <!-- nAVIGATION ICONS -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header-nav" role="navigation">
-        <div class="container"><a class="link-light navbar-brand site-title mb-0" href="./index.html"><img src="./images/OIG-removebg-preview.png" alt="logo" width="50px">Kiven</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-2">
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  DropDown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="">1</a></li>
-                  <li><a class="dropdown-item" href="">2</a></li>
-                  <li><a class="dropdown-item" href="">3</a></li>
-                  <li><a class="dropdown-item" href="">4</a></li>
-                </ul>
-              </li> -->
-              <li class="nav-item"><a class="nav-link link-light" href="https://sites.google.com/view/cantilakiven01/project_vision?authuser=5">Projects</a></li>
-              <li class="nav-item"><a class="nav-link link-light" href="./pages/contact.html">Contact</a></li>
-              <li class="nav-item"><a class="nav-link link-light" href="./pages/certificates.html">Certificates</a></li>
-            </ul>
-          </div>
+    <!-- NAVIGATION ICONS -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header-nav" role="navigation">
+      <div class="container">
+        <a class="link-light navbar-brand site-title mb-0" href="./index.html">
+          <img src="./images/OIG-removebg-preview.png" alt="logo" width="50px">Kiven
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto me-2">
+            <!-- Example with icons using Font Awesome -->
+            <li class="nav-item">
+              <a class="nav-link link-light" href="https://sites.google.com/view/cantilakiven01/project_vision?authuser=5">
+                <i class="fas fa-folder-open me-1"></i> Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-light" href="./pages/contact.html">
+                <i class="fas fa-envelope me-1"></i> Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-light" href="./pages/certificates.html">
+                <i class="fas fa-certificate me-1"></i> Certificates
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+      .nav-hover:hover, .nav-hover:focus {
+        color: #ffc107 !important; /* Bootstrap warning color */
+        background-color: rgba(255, 193, 7, 0.1);
+        border-radius: 0.25rem;
+        transition: color 0.2s, background-color 0.2s;
+      }
+      .nav-hover i {
+        transition: color 0.2s;
+      }
+      .nav-hover:hover i, .nav-hover:focus i {
+        color: #ffd700 !important; /* Gold for icon on hover */
+      }
+    </style>
+  </header>
 
     <!-- MAIN sa BODY SITE -->
      <hr style="color: azure;">
