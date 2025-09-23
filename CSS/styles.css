@@ -48,6 +48,19 @@ html {
 .active .nav-link {
   color: rgba(0, 0, 0, 0.6) !important;
 }
+/* Special Navigation */
+.nav-hover:hover, .nav-hover:focus {
+        color: #ffc107 !important; /* Bootstrap warning color */
+        background-color: rgba(255, 193, 7, 0.1);
+        border-radius: 0.25rem;
+        transition: color 0.2s, background-color 0.2s;
+      }
+      .nav-hover i {
+        transition: color 0.2s;
+      }
+      .nav-hover:hover i, .nav-hover:focus i {
+        color: #ffd700 !important; /* Gold for icon on hover */
+      }
 
 /* Hero (intro) section */
 .intro-title {
@@ -157,8 +170,14 @@ footer a:not(.nav-link) {
   position: absolute;
   bottom: -25px;
   right: -30px;
-  background-image: url("/images/marker.svg");
+  background-image: url("../images/marker.svg");
   background-repeat: no-repeat;
+}
+
+#img-size {
+  max-width: 85%;
+  height: auto;
+  object-fit: cover;
 }
 
 .marker-center:after {
@@ -177,7 +196,9 @@ footer a:not(.nav-link) {
     margin-left: -60px;
   }
 }
-
+.azure-hr {
+  color: azure;
+}
 /* Enhanced glowing "Hello I'm" - darky version */
           .animate-glow-pro-dark {
             animation: glowProDark 2.2s infinite alternate;
@@ -194,7 +215,6 @@ footer a:not(.nav-link) {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-fill-color: transparent;
           }
           @keyframes glowProDark {
             0% {
@@ -231,10 +251,9 @@ footer a:not(.nav-link) {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-fill-color: transparent;
+            background-clip: text;
             filter: drop-shadow(0 2px 16px rgba(24,90,219,0.18));
             padding: 0 0.2em;
-            position: relative;
             display: inline-block;
             overflow: hidden;
           }

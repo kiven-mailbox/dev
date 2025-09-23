@@ -8,105 +8,219 @@
     <link rel="stylesheet" href="../CSS/certificates.css">
     <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <header class="bg-dark">
       <!-- nAVIGATION ICONS -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header-nav" role="navigation">
-        <div class="container"><a class="link-light navbar-brand site-title mb-0" href="../index.html"><img src="../images/OIG-removebg-preview.png" alt="logo" width="50px">Kiven</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-2">
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  DropDown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="">1</a></li>
-                  <li><a class="dropdown-item" href="">2</a></li>
-                  <li><a class="dropdown-item" href="">3</a></li>
-                  <li><a class="dropdown-item" href="">4</a></li>
-                </ul>
-              </li> -->
-              <li class="nav-item"><a class="nav-link link-light" href="https://sites.google.com/view/cantilakiven01/project_vision?authuser=5">Projects</a></li>
-              <li class="nav-item"><a class="nav-link link-light" href="../pages/contact.html">Contact</a></li>
-              <li class="nav-item"><a class="nav-link link-light" href="../pages/certificates.html">Certificates</a></li>
-            </ul>
-          </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header-nav" role="navigation">
+      <div class="container">
+        <a class="link-light navbar-brand site-title mb-0" href="../index.html">
+          <img src="../images/OIG-removebg-preview.png" alt="logo" width="50px">Kiven
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto me-2">
+            <!-- Example with icons using Font Awesome -->
+            <li class="nav-item">
+              <a class="nav-link link-light" href="../pages/projects.html">
+                <i class="fas fa-folder-open me-1"></i> Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-light" href="../pages/contact.html">
+                <i class="fas fa-envelope me-1"></i> Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-light" href="../pages/certificates.html">
+                <i class="fas fa-certificate me-1"></i> Certificates
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
-    <div id="certificates-container">
-        <h1>My Certificates</h1>
-        <hr style="color: azure;">
-        <div class="certificate">
-            <img src="../images/certificates/C-Participation.png" alt="Certificate 1">
-            <p>
-                <strong>Certificate of Participation</strong><br>
-                Awarded by <span style="color:#fff;">Tech Trends: Cybersecurity</span>, 3rd day of August 2023.<br>
-                Recognizes active participation in the <span style="color:#fff;">Tech Trends</span>.
-            </p>
+      </div>
+    </nav>
+  </header>
+  <!-- end of navigation -->
+
+    <!-- Certificates Section -->
+<div id="certificates-container" class="container my-5">
+  <h1 class="text-center mb-4">My Certificates</h1>
+  <hr class="mb-5">
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+    <!-- Certificate 1 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm certificate-card" data-bs-toggle="modal" data-bs-target="#certificateModal1">
+        <img src="../images/certificates/C-Participation.png" class="card-img-top" alt="Certificate 1">
+        <div class="card-body">
+          <h5 class="card-title">Certificate of Participation</h5>
+          <p class="card-text">
+            Awarded by <span class="fw-bold">Tech Trends: Cybersecurity</span>, August 3, 2023.
+          </p>
         </div>
-        <div class="certificate">
-            <img src="../images/certificates/free.png" alt="Certificate 2">
-            <p>
-                <strong>Free Online Course Completion</strong><br>
-                Issued by <span style="color:#fff;">FreeCodeCamp</span>, July 14 2023.<br>
-                Successfully completed the <span style="color:#fff;">Full Stack Web Development</span> program.
-            </p>
-        </div>
-        <div class="certificate">
-            <img src="../images/certificates/Screenshot (203).png" alt="Certificate 3">
-            <p>
-                <strong>Achievement Certificate</strong><br>
-                Presented by <span style="color:#fff;">ASEAN Foundation</span>, January 2023.<br>
-                For outstanding performance in <span style="color:#fff;">SAP Analytics Cloud Training Session</span>.
-            </p>
-        </div>
-        <div class="certificate">
-            <img src="../images/certificates/Screenshot (204).png" alt="Certificate 4">
-            <p>
-                <strong>Workshop Attendee</strong><br>
-                Organized by <span style="color:#fff;">Institution of Computer Engineers in the Philippines - ICpEp</span>, December 2022.<br>
-                Attended the <span style="color:#fff;">Data Analytics</span> and gained practical skills.
-            </p>
-        </div>
-        <div class="certificate">
-            <img src="../images/certificates/Screenshot (205).png" alt="Certificate 5">
-            <p>
-                <strong>Certificate of Completion</strong><br>
-                Awarded by <span style="color:#fff;">DICT</span>, June 26 2023.<br>
-                Recognized for excellence in <span style="color:#fff;">Tabletop Discussion on Cybersecurity Hygiene</span>.
-            </p>
-        </div>
-        <div class="certificate">
-            <img src="../images/certificates/Screenshot (206).png" alt="Certificate 6">
-            <p>
-                <strong>Participation Certificate</strong><br>
-                Issued by <span style="color:#fff;">DICT</span>, June 2023.<br>
-                For active involvement in <span style="color:#fff;">Digital Literacy Webinar: Exploring the Fundamentals of Computer Networking</span>.
-            </p>
-        </div>
+      </div>
     </div>
 
-    <!-- FOOTER  -->
-    <footer id="contact" class="bg-dark text-light pt-4 pb-4 mt-5">
-      <div class="container">
+    <!-- Certificate 2 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm certificate-card" data-bs-toggle="modal" data-bs-target="#certificateModal2">
+        <img src="../images/certificates/free.png" class="card-img-top" alt="Certificate 2">
+        <div class="card-body">
+          <h5 class="card-title">Free Online Course Completion</h5>
+          <p class="card-text">
+            Issued by <span class="fw-bold">FreeCodeCamp</span>, July 14, 2023.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 3 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm certificate-card" data-bs-toggle="modal" data-bs-target="#certificateModal3">
+        <img src="../images/certificates/Screenshot (203).png" class="card-img-top" alt="Certificate 3">
+        <div class="card-body">
+          <h5 class="card-title">Achievement Certificate</h5>
+          <p class="card-text">
+            Presented by <span class="fw-bold">ASEAN Foundation</span>, January 2023.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 4 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm certificate-card" data-bs-toggle="modal" data-bs-target="#certificateModal4">
+        <img src="../images/certificates/Screenshot (204).png" class="card-img-top" alt="Certificate 4">
+        <div class="card-body">
+          <h5 class="card-title">Workshop Attendee</h5>
+          <p class="card-text">
+            Organized by <span class="fw-bold">ICpEp</span>, December 2022.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 5 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm certificate-card" data-bs-toggle="modal" data-bs-target="#certificateModal5">
+        <img src="../images/certificates/Screenshot (205).png" class="card-img-top" alt="Certificate 5">
+        <div class="card-body">
+          <h5 class="card-title">Certificate of Completion</h5>
+          <p class="card-text">
+            Awarded by <span class="fw-bold">DICT</span>, June 26, 2023.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificate 6 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm certificate-card" data-bs-toggle="modal" data-bs-target="#certificateModal6">
+        <img src="../images/certificates/Screenshot (206).png" class="card-img-top" alt="Certificate 6">
+        <div class="card-body">
+          <h5 class="card-title">Participation Certificate</h5>
+          <p class="card-text">
+            Issued by <span class="fw-bold">DICT</span>, June 2023.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========================= -->
+<!-- Bootstrap Modals for Full View -->
+<!-- ========================= -->
+
+<!-- Modal 1 -->
+<div class="modal fade" id="certificateModal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src="../images/certificates/C-Participation.png" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="certificateModal2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src="../images/certificates/free.png" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="certificateModal3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src="../images/certificates/Screenshot (203).png" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="modal fade" id="certificateModal4" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src="../images/certificates/Screenshot (204).png" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="modal fade" id="certificateModal5" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src="../images/certificates/Screenshot (205).png" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6 -->
+<div class="modal fade" id="certificateModal6" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src="../images/certificates/Screenshot (206).png" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- FOOTER (Sticky) -->
+  <footer id="contact" class="bg-dark text-light pt-4 pb-4 mt-auto">
+    <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
-        <span class="fw-bold">© 2025 Kiven Cantila</span>
+          <span class="fw-bold">© 2025 Kiven Cantila</span>
         </div>
         <div class="col-md-6 text-md-end text-center">
-        <a href="./SECURITY.html" class="text-secondary text-decoration-none mx-2">Security</a>
-        <span class="text-secondary">|</span>
-        <a href="../policy/privacy.html" class="text-secondary text-decoration-none mx-2">Privacy</a>
-        <span class="text-secondary">|</span>
-        <a href="../policy/terms.html" class="text-secondary text-decoration-none mx-2">Terms</a>
+          <a href="SECURITY.html" class="text-secondary text-decoration-none mx-2">Security</a>
+          <span class="text-secondary">|</span>
+          <a href="../policy/privacy.html" class="text-secondary text-decoration-none mx-2">Privacy</a>
+          <span class="text-secondary">|</span>
+          <a href="../policy/terms.html" class="text-secondary text-decoration-none mx-2">Terms</a>
         </div>
       </div>
-      </div>
-    </footer>
+    </div>
+  </footer>
     <script src="../bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

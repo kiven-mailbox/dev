@@ -3,44 +3,67 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        <meta name="generator" content="Astro v5.9.2">
         <title>Contact</title>
+        <link rel="stylesheet" href="../CSS/styles.css">
         <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.min.css">
-        <meta name="theme-color" content="#712cf9">
+        <!-- Theme color for Chrome, Edge, and Android -->
+        <!-- Note: 'theme-color' meta tag removed due to lack of support in Firefox and Opera; fallback handled in CSS below -->
+        <!-- Tile color for Windows IE/Edge -->
+        <meta name="msapplication-TileColor" content="#712cf9">
+        <!-- Status bar color for iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="#712cf9">
+        <!-- Note: Firefox and Opera may not support theme-color meta tag -->
+        <!-- Fallback for browsers that do not support theme-color -->
+        <style>
+          html, body {
+            background-color: #712cf9;
+          }
+          @media (prefers-color-scheme: light) {
+            html, body {
+              background-color: #712cf9;
+            }
+          }
+          /* Fallback for Firefox and Opera browsers removed as @-moz-document is not widely supported */
+        </style>
         <link href="../CSS/contact.css" rel="stylesheet">
         <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     </head>
     <body>
-
-        <header class="bg-dark">
-            <!-- nAVIGATION ICONS -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header-nav" role="navigation">
-                <div class="container"><a class="link-light navbar-brand site-title mb-0" href="../index.html"><img src="../images/OIG-removebg-preview.png" alt="logo" width="50px">Kiven</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto me-2">
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        DropDown
-                        </a>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="">1</a></li>
-                        <li><a class="dropdown-item" href="">2</a></li>
-                        <li><a class="dropdown-item" href="">3</a></li>
-                        <li><a class="dropdown-item" href="">4</a></li>
-                        </ul>
-                    </li> -->
-                    <li class="nav-item"><a class="nav-link link-light" href="https://sites.google.com/view/cantilakiven01/project_vision?authuser=5">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link link-light" href="../pages/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link link-light" href="../pages/certificates.html">Certificates</a></li>
-                    </ul>
-                </div>
-                </div>
-            </nav>
-            </header>
+      <header class="bg-dark">
+      <!-- nAVIGATION ICONS -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header-nav" role="navigation">
+      <div class="container">
+        <a class="link-light navbar-brand site-title mb-0" href="../index.html">
+          <img src="../images/OIG-removebg-preview.png" alt="logo" width="50px">Kiven
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto me-2">
+            <!-- Example with icons using Font Awesome -->
+            <li class="nav-item">
+              <a class="nav-link link-light" href="../pages/projects.html">
+                <i class="fas fa-folder-open me-1"></i> Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-light" href="../pages/contact.html">
+                <i class="fas fa-envelope me-1"></i> Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-light" href="../pages/certificates.html">
+                <i class="fas fa-certificate me-1"></i> Certificates
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- end of navigation -->
 
             <!-- HEADER -->
   <header class="text-center py-4">
@@ -57,23 +80,24 @@
           <ul class="list-unstyled">
             <li class="mb-3">
               <strong>Email:</strong> 
-              <a href="mailto:kivencantila@example.com">kivencantila@example.com</a>
+              <a href="mailto:cantilakiven.mailbox01@gmail.com">cantilakiven.mailbox01@gmail.com</a>
             </li>
             <li class="mb-3">
               <strong>Mobile:</strong> 
-              <a href="tel:+639123456789">+63 912 345 6789</a>
+              <a href="tel:+639816195241">TNT +639816195241</a>
+              <a href="tel:+639359193319">TM +639359193319</a>
             </li>
             <li class="mb-3">
               <strong>Facebook:</strong> 
-              <a href="https://facebook.com/yourprofile" target="_blank">facebook.com/yourprofile</a>
+              <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener">Facebook Profile Link</a>
             </li>
             <li class="mb-3">
-              <strong>LinkedIn:</strong> 
-              <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+              <strong>Instagram:</strong> 
+              <a href="https://instagram.com/in/yourprofile" target="_blank" rel="noopener">Instagram Profile Link</a>
             </li>
             <li>
-              <strong>GitHub:</strong> 
-              <a href="https://github.com/yourprofile" target="_blank">github.com/yourprofile</a>
+              <strong>Whatsapp:</strong> 
+              <a href="https://github.com/yourprofile" target="_blank" rel="noopener">Whatsapp</a>
             </li>
           </ul>
         </div>
