@@ -1,79 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
-    <link rel="stylesheet" href="../CSS/styles.css">
-    <link rel="stylesheet" href="../CSS/projects.css">
-    <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.min.css">
-    <!-- <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/"> -->
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- You can use EITHER the offline OR the CDN, but not both -->
-    <!-- CDN version -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Fira+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skills</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../CSS/skills.css">
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="icon" type="image/png" href="../images/favicon.ico">
 </head>
-<body>
+<body class="bg-light">
   <canvas id="falling-leaves"></canvas>
-        <!-- nAVIGATIONs -->
+
+  <!-- Navbar -->
   <header class="bg-dark">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header-nav" role="navigation">
-      <div class="container">
-        <a class="link-light navbar-brand site-title mb-0" href="../index.html">
-          <img src="../images/OIG-removebg-preview.png" alt="logo" width="50px">Kiven
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto me-2">
-            <!-- Example with icons using Font Awesome -->
-            <li class="nav-item">
-              <a class="nav-link link-light" href="../pages/projects.html">
-                <i class="fas fa-folder-open me-1"></i> Projects
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-light" href="../pages/contact.html">
-                <i class="fas fa-envelope me-1"></i> Contact
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-light" href="../pages/certificates.html">
-                <i class="fas fa-certificate me-1"></i> Certificates
-              </a>
-            </li>
-          </ul>
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-dark container">
+      <a class="navbar-brand d-flex align-items-center" href="../index.html">
+        <img src="../images/OIG-removebg-preview.png" alt="logo" width="40" class="me-2">
+        <span class="fw-bold">Kiven</span>
+      </a>
+      <button aria-label="button-toggler" id="navigation-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/projects.html">
+              <i class="fas fa-folder-open me-1"></i> Projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/contact.html">
+              <i class="fas fa-envelope me-1"></i> Contact
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/certificates.html">
+              <i class="fas fa-certificate me-1"></i> Certificates
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   </header>
-  <!-- end of navigation -->
 
-  <!-- content of the projects page here -->
-  <section class="container my-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2 class="display-5 fw-bold mb-4">My Projects</h2>
-        <hr id="hr-projects" class="mx-auto mb-4">
-        <p class="lead text-muted mb-5">
-          Here you'll soon find a showcase of my favorite projects, including web apps, designs, and more. Stay tuned!
-        </p>
-        <div id="div-style" class="d-flex justify-content-center align-items-center">
-          <span class="text-secondary fs-1">
-            <i class="fas fa-tools fa-spin me-2"></i> Coming Soon
-          </span>
+  <!-- Skills Section -->
+  <main class="py-5">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="row g-4">
+        
+        <!-- Web Dev Skills -->
+        <div class="col-md-6">
+          <div class="skill-card">
+            <div class="skill-label">
+              <span><i class="fas fa-code text-primary"></i> HTML / CSS</span>
+              <span>90%</span>
+            </div>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-primary" role="progressbar" data-value="90"></div>
+            </div>
+
+            <div class="skill-label">
+              <span><i class="fab fa-bootstrap text-purple"></i> Bootstrap 5</span>
+              <span>40%</span>
+            </div>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-info" role="progressbar" data-value="40"></div>
+            </div>
+
+            <div class="skill-label">
+              <span><i class="fab fa-js-square text-warning"></i> JavaScript</span>
+              <span>20%</span>
+            </div>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-warning" role="progressbar" data-value="20"></div>
+            </div>
+          </div>
         </div>
+
+        <!-- Programming Skills -->
+        <div class="col-md-6">
+          <div class="skill-card">
+            <div class="skill-label">
+              <span><i class="fas fa-terminal text-success"></i> C++</span>
+              <span>0%</span>
+            </div>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-success" role="progressbar" data-value="0"></div>
+            </div>
+
+            <div class="skill-label">
+              <span><i class="fab fa-python text-info"></i> Python</span>
+              <span>30%</span>
+            </div>
+            <div class="progress mb-3">
+              <div class="progress-bar bg-info" role="progressbar" data-value="30"></div>
+            </div>
+
+            <div class="skill-label">
+              <span><i class="fas fa-microchip text-danger"></i> Embedded Systems</span>
+              <span>50%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" data-value="50"></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="bg-dark text-light py-3 mt-4 fixed-bottom">
-    <div class="container">
+  <footer id="contact" class="bg-dark text-light pt-4 py-3 pb-4 mt-auto">
+    <div class="container text-center">
       <div class="row align-items-center">
         <!-- Left side with © + signature -->
         <div class="col-md-6 text-md-start text-center mb-2 mb-md-0 d-flex align-items-center justify-content-center justify-content-md-start">
@@ -83,29 +130,23 @@
               alt="Signature" 
               class="signature-img">
         </div>
+
+        <!-- Right side links -->
         <div class="col-md-6 text-md-end text-center">
-          <a href="SECURITY.html" class="text-secondary text-decoration-none mx-2">Security</a>
+           <a href="./SECURITY.html" class="text-secondary text-decoration-none mx-2">Security</a>
           <span class="text-secondary">|</span>
-          <a href="../policy/privacy.html" class="text-secondary text-decoration-none mx-2">Privacy</a>
+          <a href="./policy/privacy.html" class="text-secondary text-decoration-none mx-2">Privacy</a>
           <span class="text-secondary">|</span>
-          <a href="../policy/terms.html" class="text-secondary text-decoration-none mx-2">Terms</a>
+          <a href="./policy/terms.html" class="text-secondary text-decoration-none mx-2">Terms</a>
         </div>
       </div>
     </div>
   </footer>
+  <!-- End Footer -->
 
-
-    
+  <!-- Bootstrap JS -->
   <script src="../bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/leaves.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script> -->
+  <script src="../assets/skills.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
