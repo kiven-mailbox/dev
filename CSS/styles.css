@@ -110,7 +110,9 @@ html {
 }
 
 .hero-content {
-  padding-left: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .hero-title {
@@ -456,3 +458,4 @@ footer a:not(.nav-link) {
   70%  { transform: scale(1.04, 0.96); }
   100% { transform: scale(1.02, 0.98); }
 }
+
