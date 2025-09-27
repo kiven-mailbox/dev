@@ -26,4 +26,6 @@ This project is intended **solely for personal use** as a demonstration of my we
 - **GitHub Pages** (for hosting)
 
 ## Live Demo
+![Alt text](./images/Screenshot%202025-09-26%20211634.png)
+
 🔗 [View Portfolio](https://privatebox-arch.github.io/My-Portfolio/)

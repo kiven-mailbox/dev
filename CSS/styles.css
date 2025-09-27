@@ -108,7 +108,6 @@ html {
     text-align: left;
   }
 }
-
 .hero-content {
   max-width: 900px;
   margin: 0 auto;
@@ -458,4 +457,3 @@ footer a:not(.nav-link) {
   70%  { transform: scale(1.04, 0.96); }
   100% { transform: scale(1.02, 0.98); }
 }
-
