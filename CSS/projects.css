@@ -250,6 +250,54 @@
       padding: 0.4rem 1rem;
       font-size: 0.9rem;
     }
+    /* Ensure project buttons are always visible */
+.work .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.work .content {
+  position: relative;
+  z-index: 2;
+  background: #222;
+  padding: 1rem;
+  min-height: 120px; /* keeps enough space for text + buttons */
+}
+
+.work .btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.work .btns a {
+  z-index: 3;
+  position: relative;
+}
+
+/* Make outline button actually visible */
+.btn-outline-light {
+  border: 2px solid #fff !important;
+  color: #fff !important;
+  background: transparent !important;
+}
+
+.btn-outline-light:hover {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* Mobile safe layout */
+@media (max-width: 480px) {
+  .work .btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
     footer {
       background: #111;
       color: #888;
