@@ -38,3 +38,24 @@ body {
       color: #ff9800;
       font-weight: bold;
     }
+  .contact a {
+    color: #712cf9;
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .contact a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background: #712cf9;
+    transition: width 0.3s ease;
+  }
+
+  .contact a:hover::after {
+    width: 100%;
+  }
