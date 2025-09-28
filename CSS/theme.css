@@ -1,0 +1,28 @@
+/* Default Light Theme */
+body.light-theme {
+  background: #ffffff;
+  color: #222;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+/* Cold Theme (icy bluish) */
+body.cold-theme {
+  background: #e6f4f9;
+  color: #0a2e4d;
+}
+
+/* Optional: smooth transition */
+body {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
