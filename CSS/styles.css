@@ -398,21 +398,22 @@ footer a:not(.nav-link) {
   color: azure;
 }
 
+
 /* subtle visible single line */
 .thin-hr {
-  width: 80px;              /* adjust length */
-  height: 0;                /* keep element height zero */
+  width: 80px;              
+  height: 0;                
   border: 0;                
-  border-top: 1px solid rgba(255,255,255,0.12); /* faint line (change color) */
-  margin: 6px auto;        /* small vertical space, centered */
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin: 6px auto;        
   display: block;
 }
 
 .adaptive-hr {
   border: none; 
-  border-top: 1px solid rgba(255, 255, 255, 0.2); /* soft light-gray/white */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); 
   width: 80px; 
-  margin: 0.5rem auto;                /* tiny space, centered */            /* faint look, adjust if needed */
+  margin: 0.5rem auto;
 }
 
 

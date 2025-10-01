@@ -6,14 +6,8 @@
         <title>Contact</title>
         <link rel="stylesheet" href="../CSS/styles.css">
         <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.min.css">
-        <!-- Theme color for Chrome, Edge, and Android -->
-        <!-- Note: 'theme-color' meta tag removed due to lack of support in Firefox and Opera; fallback handled in CSS below -->
-        <!-- Tile color for Windows IE/Edge -->
         <meta name="msapplication-TileColor" content="#712cf9">
-        <!-- Status bar color for iOS Safari -->
         <meta name="apple-mobile-web-app-status-bar-style" content="#712cf9">
-        <!-- Note: Firefox and Opera may not support theme-color meta tag -->
-        <!-- Fallback for browsers that do not support theme-color -->
         <style>
           html, body {
             background-color: #712cf9;
@@ -23,7 +17,6 @@
               background-color: #712cf9;
             }
           }
-          /* Fallback for Firefox and Opera browsers removed as @-moz-document is not widely supported */
         </style>
         <link href="../CSS/contact.css" rel="stylesheet">
         <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
@@ -43,7 +36,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto me-2">
-            <!-- Example with icons using Font Awesome -->
             <li class="nav-item">
               <a class="nav-link link-light" href="../pages/projects.html">
                 <i class="fas fa-folder-open me-1"></i> Projects
@@ -65,55 +57,16 @@
     </nav>
   </header>
   <!-- end of navigation -->
-
-            <!-- HEADER -->
-    <!-- <header class="text-center py-4">
-      <h1>Contact Me</h1>
-      <p class="text-secondary">Get in touch through my email, phone, or social media</p>
-    </header> -->
-
-    <!-- CONTACT INFO -->
+   
       <!-- CONTACT INFO + FORM -->
-       <hr style="color: rgb(34, 34, 36);">
+    <hr style="color: rgb(34, 34, 36);">
     <main class="container mb-5">
       <div class="row g-4 justify-content-center">
-        
-        <!-- Contact Details
-        <div class="col-md-6">
-          <div class="card p-4 shadow-sm">
-            <ul class="list-unstyled">
-              <li class="mb-3 d-flex align-items-center gap-2">
-                <i class="fas fa-envelope text-primary"></i>
-                <a href="mailto:cantilakiven.mailbox01@gmail.com">cantilakiven.mailbox01@gmail.com</a>
-              </li>
-              <li class="mb-3 d-flex align-items-center gap-2">
-                <i class="fas fa-phone text-success"></i>
-                <div>
-                  <a href="tel:+639816195241">TNT +639816195241</a><br>
-                  <a href="tel:+639359193319">TM +639359193319</a>
-                </div>
-              </li>
-              <li class="mb-3 d-flex align-items-center gap-2">
-                <i class="fab fa-facebook text-primary"></i>
-                <a href="https://www.facebook.com/doyouwantmypassw0rd.right/" target="_blank">Facebook Profile</a>
-              </li>
-              <li class="mb-3 d-flex align-items-center gap-2">
-                <i class="fab fa-instagram text-danger"></i>
-                <a href="https://www.instagram.com/kiven_mailbox/" target="_blank">Instagram Profile</a>
-              </li>
-              <li class="d-flex align-items-center gap-2">
-                <i class="fab fa-whatsapp text-success"></i>
-                <a href="https://wa.me/639816195241" target="_blank">WhatsApp</a>
-              </li>
-            </ul>
-          </div>
-        </div> -->
-
         <!-- Contact Form -->
         <div class="col-md-6">
           <div class="card bg-dark text-light shadow-lg p-4">
             <h4 class="text-warning mb-4 text-center">
-              <i class="fas fa-paper-plane me-2"></i>Send a Message
+              <i class="fas fa-paper-plane me-2"></i>Message me here 
             </h4>
             <form id="contact-form">
               <div class="mb-3">
@@ -154,7 +107,7 @@
       </div>
     </main>
 
-    <!-- FOOTER (Sticky) -->
+    <!-- FOOTER -->
     <footer id="contact" class="bg-dark text-light pt-4 pb-4 mt-auto">
       <div class="container">
         <div class="row align-items-center">
@@ -204,7 +157,6 @@
           document.getElementById("contact-form").addEventListener("submit", function(e) {
             e.preventDefault();
 
-            // Build form data manually
             const formData = {
               from_name: document.getElementById("name").value,
               reply_to: document.getElementById("email").value,
