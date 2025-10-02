@@ -12,12 +12,13 @@ canvas.style.position = "fixed";
 canvas.style.top = "0";
 canvas.style.left = "0";
 canvas.style.pointerEvents = "none";
-canvas.style.zIndex = "1";
+canvas.style.zIndex = "9999"; // ensure snow is always on top
+canvas.style.background = "transparent"; // keep transparent
 
 // Snowflake class
 class Snowflake {
   constructor(depth = 1) {
-    this.depth = depth; // depth layer for parallax
+    this.depth = depth;
     this.reset();
   }
 
@@ -25,13 +26,12 @@ class Snowflake {
     this.x = Math.random() * width;
     this.y = Math.random() * -height;
 
-    // Smaller realistic snowflake sizes
     if (this.depth === 0.5) {
-      this.size = 1 + Math.random() * 2; // far away
+      this.size = 1 + Math.random() * 2;
     } else if (this.depth === 1) {
-      this.size = 2 + Math.random() * 3; // mid
+      this.size = 2 + Math.random() * 3;
     } else {
-      this.size = 3 + Math.random() * 4; // close
+      this.size = 3 + Math.random() * 4;
     }
 
     this.speed = (0.3 + Math.random() * 1.2) * this.depth;
@@ -54,7 +54,6 @@ class Snowflake {
     ctx.save();
     ctx.translate(this.x, this.y);
 
-    // Soft glow blur depending on size
     ctx.shadowColor = "rgba(255,255,255,0.8)";
     ctx.shadowBlur = this.size * 1.5;
 
@@ -67,7 +66,6 @@ class Snowflake {
   }
 }
 
-// Initialize snowflakes
 function initSnow(count = 100) {
   snowflakes = [];
   for (let i = 0; i < count; i++) {
@@ -79,14 +77,6 @@ function initSnow(count = 100) {
 function animate() {
   ctx.clearRect(0, 0, width, height);
 
-  // Subtle night sky gradient
-  let gradient = ctx.createLinearGradient(0, 0, 0, height);
-  gradient.addColorStop(0, "rgba(10,10,30,0.3)");
-  gradient.addColorStop(1, "rgba(0,0,10,0.6)");
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, width, height);
-
-  // Draw snowflakes
   snowflakes.forEach((flake) => {
     flake.update();
     flake.draw();
@@ -103,6 +93,5 @@ window.addEventListener("resize", () => {
   initSnow();
 });
 
-// Start
 initSnow();
 animate();

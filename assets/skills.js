@@ -12,6 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
           bar.style.width = width + "%";
           bar.setAttribute("aria-valuenow", width);
         }
-      }, 15); // adjust speed
+      }, 15); // adjust sa speed
     });
   });

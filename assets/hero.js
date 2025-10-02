@@ -2,7 +2,6 @@
 (() => {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Elements
   const heroContent = document.querySelector('.hero-content');
   const heroImageWrap = document.querySelector('.hero-image-wrap');
   const heroImg = document.getElementById('hero-photo');
@@ -24,7 +23,6 @@
 
     io.observe(heroContent);
   } else {
-    // Immediately show for reduced-motion users or fallback
     requestAnimationFrame(() => heroContent.classList.add('in-view'));
   }
 

@@ -34,7 +34,6 @@ class Leaf {
     this.x = Math.random() * width;
     this.y = Math.random() * -height;
 
-    // 🎯 Smaller leaves with depth-based scaling
     if (this.depth === 0.5) {
       this.size = 2 + Math.random() * 4; // far away (tiny)
     } else if (this.depth === 1) {
@@ -67,7 +66,7 @@ class Leaf {
     ctx.translate(this.x, this.y);
     ctx.rotate(this.angle);
 
-    // ✨ Glow proportional to leaf size
+    // Glow proportional to leaf size
     ctx.shadowColor = this.color;
     ctx.shadowBlur = Math.max(3, this.size * 1.2);
 
@@ -80,7 +79,6 @@ class Leaf {
   }
 }
 
-// Initialize with depth layers
 function initLeaves(count = 60) {
   leaves = [];
   for (let i = 0; i < count; i++) {
@@ -92,14 +90,12 @@ function initLeaves(count = 60) {
 function animate() {
   ctx.clearRect(0, 0, width, height);
 
-  // Subtle background gradient
   let gradient = ctx.createLinearGradient(0, 0, 0, height);
   gradient.addColorStop(0, "rgba(20,20,40,0.2)");
   gradient.addColorStop(1, "rgba(10,10,20,0.4)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, width, height);
 
-  // Draw all leaves
   leaves.forEach((leaf) => {
     leaf.update();
     leaf.draw();
@@ -116,6 +112,5 @@ window.addEventListener("resize", () => {
   initLeaves();
 });
 
-// Start
 initLeaves();
 animate();
