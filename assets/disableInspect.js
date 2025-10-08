@@ -1,3 +1,7 @@
+// example: assets/disableInspect.js
+// Disable right-click, keyboard shortcuts, and detect DevTools
+// para dili ma inspect ang website
+
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.getElementById("mainBody");
 

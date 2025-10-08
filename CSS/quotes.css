@@ -48,8 +48,44 @@
   opacity: 0.8;
 }
 
+.hide {
+  display: none !important;
+}
+
 cite {
     color: rgba(35, 30, 30, 0.4);
+}
+
+/* ========================
+   QUOTE POPUP (used)
+   unique to this page
+======================== */
+.quote-popup-unique {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: rgba(10, 25, 49, 0.92);
+  color: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.98rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.28);
+  z-index: 9999;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.quote-popup-unique.hide {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+@keyframes quotePopupFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.quote-popup-unique.show {
+  animation: quotePopupFade 0.8s ease-out;
 }
 
 /* Animations */
