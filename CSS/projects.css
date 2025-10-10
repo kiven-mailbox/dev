@@ -1,134 +1,123 @@
 body {
   background: #0b0c28;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
+
 .heading {
   text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 2rem 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  letter-spacing: 1px;
 }
+
 .heading span {
   color: #ffd700;
 }
+
+/* Filter Buttons */
 #filters {
   text-align: center;
   margin-bottom: 2rem;
+  padding: 0 1rem;
 }
+
 #filters .btn {
   margin: 0.5rem;
-  border-radius: 30px;
-  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  padding: 0.6rem 1.3rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #444;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+#filters .btn:hover,
+#filters .btn.is-checked {
+  background: #ffd700;
+  color: #000;
+  border-color: #ffd700;
+}
+
+/* Project Grid */
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1.5rem 2rem;
+}
+
+/* Project Card */
+.box {
+  background: #111;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
+}
+
+.box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #222;
+}
+
+/* Card Content */
+.content {
+  padding: 1rem 1.2rem;
+  background: #1a1a1a;
+}
+
+.tag h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.desc p {
+  font-size: 0.92rem;
+  color: #bbb;
+  margin-top: 0.4rem;
+  text-align: justify;
+}
+
+/* Buttons */
+.work .btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.work .btns .btn {
+  border-radius: 25px;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
   background: #222;
   color: #fff;
   border: 1px solid #444;
   transition: all 0.3s ease;
 }
-#filters .btn:hover,
-#filters .btn.is-checked {
+
+.work .btns .btn:hover {
   background: #ffd700;
   color: #000;
-}
-.box-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  padding: 0 2rem;
-}
-.box {
-  background: #111;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.7);
-}
-.box img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.content {
-  padding: 1rem;
-  background: #222;
-}
-.tag h3 {
-  font-size: 1.2rem;
-  margin: 0;
-  font-weight: 600;
-}
-.desc p {
-  font-size: 0.9rem;
-  color: #aaa;
-  margin-top: 0.5rem;
-}
-.btns .btn {
-  margin: 0.3rem;
-  border-radius: 25px;
-  padding: 0.4rem 1rem;
-  font-size: 0.9rem;
-}
-/* Ensure project buttons are always visible */
-.work .box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border-color: #ffd700;
 }
 
-.work .content {
-  position: relative;
-  z-index: 2;
-  background: #222;
-  padding: 1rem;
-  min-height: 120px; /* keeps enough space for text + buttons */
-}
-
-.work .btns {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.work .btns a {
-  z-index: 3;
-  position: relative;
-}
-
-.azure-hr{
-  color: azure;
-}
-
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-      
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
-
-  #hr-projects {
-    width: 80px;
-    border-top: 3px solid #0d6efd;
-  }
-  #div-style {
-    height: 180px;
-  }
-      
-
-/* Make outline button actually visible */
+/* Outline Buttons */
 .btn-outline-light {
   border: 2px solid #fff !important;
   color: #fff !important;
@@ -140,18 +129,71 @@ body {
   color: #000 !important;
 }
 
-/* Mobile safe layout */
-@media (max-width: 480px) {
-  .work .btns {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Divider and Utility */
+#hr-projects {
+  width: 80px;
+  border-top: 3px solid #ffd700;
+  margin: 0 auto 1.5rem;
 }
 
+/* Footer */
 footer {
   background: #111;
   color: #888;
   text-align: center;
   padding: 1rem 0;
   margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  #filters .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .desc p {
+    font-size: 0.88rem;
+  }
+
+  .box-container {
+    gap: 1.2rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  #filters {
+    margin-bottom: 1.5rem;
+  }
+
+  #filters .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .box img {
+    height: 180px;
+  }
+
+  .work .btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work .btns .btn {
+    width: 90%;
+  }
+}
+.azure-hr {
+  color: azure;
 }

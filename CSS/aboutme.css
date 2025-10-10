@@ -1,0 +1,54 @@
+
+.about-section {
+  padding: 68px 0;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+}
+
+.highlight {
+  color: #FFD700;
+}
+.kiven, .ai-tools {
+  color: #f4bf10;
+  font-weight: 600;
+}
+
+.lead {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+p {
+  color: #000000;
+}
+
+.hobbies div span {
+  background: #222;
+  color: #d4af37;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin: 5px;
+  display: inline-block;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.hobbies div span:hover {
+  background: #d4af37;
+  color: #111;
+}
+
+
+@media (max-width: 767px) {
+  .about-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .about-img {
+    margin-bottom: 30px;
+  }
+}

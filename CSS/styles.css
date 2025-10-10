@@ -15,57 +15,6 @@ html {
   }
 }
 
-/* ========================
-   HEADER / NAVBAR (used)
-======================== */
-@media (min-width: 48em) {
-  .site-title {
-    float: left;
-  }
-}
-
-.nav-link {
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.8) !important;
-  padding: 0 0.5rem;
-  font-size: 1.1rem;
-  line-height: 2.5rem;
-}
-
-.nav-link:hover,
-.nav-link:focus,
-.active .nav-link {
-  color: rgba(0, 0, 0, 0.6) !important;
-}
-
-/* NAV LINK underline */
-.navbar-nav .nav-link {
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 2px;
-  width: 0;
-  height: 2px;
-  background: #00c6ff;
-  transition: width 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover::after {
-  width: 100%;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #00c6ff !important;
-}
-
-.navbar-nav .nav-link.active {
-  color: #00c6ff !important;
-}
 
 /* ========================
    HERO SECTION (used)

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../CSS/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Certificates</title>
+    <link rel="stylesheet" href="../CSS/navbar-footer.css">
     <link rel="stylesheet" href="../CSS/certificates.css">
     <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
@@ -24,6 +24,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto me-2">
+            <li class="nav-item">
+              <a class="nav-link link-light" href="../pages/aboutme.html">
+                <i class="fas fa-robot"></i> About Me
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link link-light" href="../pages/skills.html">
                 <i class="fas fa-laptop-code"></i> Skills
@@ -48,7 +53,7 @@
 
     <!-- Certificates Section -->
 <div id="certificates-container" class="container my-5">
-  <h1 class="text-center mb-4">My Certificates</h1>
+  <h1 id="h1-certificate" class="text-center mb-4">My Certificates</h1>
   <hr class="mb-5">
 
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -227,6 +232,8 @@
     </div>
   </footer>
   <!-- End Footer -->
+
+  <!-- Bootstrap JS and dependencies -->
     <script src="../bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="../assets/leaves.js"></script> -->
      <script src="../assets/disableInspect.js"></script>
