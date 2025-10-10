@@ -3,7 +3,6 @@
    ========================= */
 #certificates-container {
   padding: 4rem 2rem;
-  color: #fff;
   overflow: hidden;
   position: relative;
 }
@@ -37,9 +36,7 @@
 .certificate-card:nth-child(1) { animation-delay: 0.2s; }
 .certificate-card:nth-child(2) { animation-delay: 0.4s; }
 .certificate-card:nth-child(3) { animation-delay: 0.6s; }
-/* add more delays for more cards */
 
-/* Image Styling */
 .certificate-card img {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
@@ -65,7 +62,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* Card Text */
 .certificate-card .card-text {
   font-size: 0.95rem;
   opacity: 0.9;

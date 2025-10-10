@@ -1,57 +1,67 @@
-// example: assets/disableInspect.js
-// Disable right-click, keyboard shortcuts, and detect DevTools
-// para dili ma inspect ang website
+// assets/disableInspect.js
+// Prevent inspecting, copying, or viewing source (client-side only)
 
-document.addEventListener("DOMContentLoaded", function () {
-  const body = document.getElementById("mainBody");
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.getElementById("mainBody") || document.body;
 
-  if (body) {
-    // 1. Disable right-click
-    body.addEventListener("contextmenu", (e) => e.preventDefault());
+  // Disable right-click
+  body.addEventListener("contextmenu", (e) => e.preventDefault());
 
-    // 2. Disable key shortcuts
-    document.onkeydown = function (e) {
-      if (
-        e.keyCode === 123 || // F12
-        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I / J
-        (e.ctrlKey && e.keyCode === 85) // Ctrl+U
-      ) {
-        e.preventDefault();
-        return false;
-      }
-    };
+  // Disable F12, Ctrl+Shift+I/J, Ctrl+U, Ctrl+S
+  document.onkeydown = function (e) {
+    if (
+      e.keyCode === 123 || // F12
+      (e.ctrlKey && e.shiftKey && [73, 74].includes(e.keyCode)) || // Ctrl+Shift+I / J
+      (e.ctrlKey && [83, 85, 67].includes(e.keyCode)) // Ctrl+S / U / C
+    ) {
+      e.preventDefault();
+      fake404();
+      return false;
+    }
+  };
 
-    // 3. Detect DevTools via window resize
-    setInterval(function () {
-      if (
-        window.outerWidth - window.innerWidth > 200 ||
-        window.outerHeight - window.innerHeight > 200
-      ) {
-        blockAccess();
-      }
-    }, 1000);
+  // Detect DevTools via resize
+  setInterval(() => {
+    if (
+      window.outerWidth - window.innerWidth > 200 ||
+      window.outerHeight - window.innerHeight > 200
+    ) {
+      fake404();
+    }
+  }, 1000);
 
-    // 4. Detect DevTools via console
-    (function detectConsole() {
-      let check = false;
-      const element = new Image();
-      Object.defineProperty(element, "id", {
-        get: function () {
-          check = true;
-          blockAccess();
-        },
-      });
-      console.log(element);
-    })();
-  }
+  // Detect DevTools via console.log trap
+  (function detectConsole() {
+    const element = new Image();
+    Object.defineProperty(element, "id", {
+      get: function () {
+        fake404();
+      },
+    });
+    console.log(element);
+  })();
 
-  // What happens if DevTools is detected
-  function blockAccess() {
-    // Clear page
-    document.body.innerHTML = "";
-    // Redirect to homepage after 1 second
-    setTimeout(() => {
-      window.location.href = "/";
-    }, 1000);
+  function fake404() {
+    document.body.innerHTML = `
+      <style>
+        body {
+          background: #0b0c28;
+          color: #ffd700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          font-family: 'Poppins', sans-serif;
+          text-align: center;
+        }
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        p { color: #aaa; }
+      </style>
+      <div>
+        <h1>404 - Page Not Found</h1>
+        <p>The page you’re looking for doesn’t exist.</p>
+      </div>`;
+    console.clear();
+    setTimeout(() => (window.location.href = "/"), 1500);
   }
 });
