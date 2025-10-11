@@ -59,7 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
       </style>
       <div>
         <h1>404 - Page Not Found</h1>
-        <p>The page you’re looking for doesn’t exist.</p>
+        <p>The CODE you’re looking for doesn’t exist.</p>
+        <p>⚠️ Do not Inspect The Page to Restart ⚠️</p>
       </div>`;
     console.clear();
     setTimeout(() => (window.location.href = "/"), 1500);
