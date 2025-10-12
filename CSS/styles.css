@@ -1,7 +1,7 @@
 /* ========================
    RESET & BASE STYLES
 ======================== */
-html, body {
+/* html, body {
   overflow-x: hidden;
 }
 
@@ -13,7 +13,7 @@ html {
   html {
     scroll-behavior: auto;
   }
-}
+} */
 
 
 /* ========================
