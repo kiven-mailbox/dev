@@ -1,13 +1,15 @@
-html, body {
+/* html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
+} */
+html, body {
+  height: 100%;
+  margin: 0;
 }
-body {
-  font-family: 'Poppins', sans-serif;
-}
+
 
 .section-title {
   font-size: 2.4rem;
@@ -19,9 +21,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 /* Ensure full height layout for sticky footer */
-main {
-  flex: 1; /* push footer down */
-}
 
 .skill-card {
   background: #fff;

@@ -6,6 +6,24 @@
     float: left;
   }
 }
+body {
+  padding-top: 80px; /* Prevent content from hiding behind navbar */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* main content fills remaining space */
+}
+
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
 
 .nav-link {
   font-weight: 700;
@@ -53,6 +71,9 @@
 /* ========================
    FOOTER (do not change)
 ======================== */
+footer {
+  margin-top: auto;
+}
 footer a:not(.nav-link) {
   color: inherit;
   font-weight: 600;

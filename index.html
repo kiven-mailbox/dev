@@ -20,6 +20,20 @@
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+  body {
+    padding-top: 80px; /* Prevent content from hiding behind navbar */
+  }
+
+  .navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+</style>
 </head>
 <body id="mainBody" class="background-color d-flex flex-column min-vh-100">
   <!-- Falling Snow Canvas -->
@@ -27,7 +41,7 @@
   <!-- <canvas id="falling-leaves"></canvas> -->
   <!-- Navigation -->
   <header class="bg-dark">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header-nav" role="navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="header-nav" role="navigation">
       <div class="container">
         <a class="link-light navbar-brand site-title mb-0" href="./index.html">
           <img src="./images/OIG-removebg-preview.png" alt="logo" width="50">Kiven
@@ -143,7 +157,7 @@
               class="signature-img">
               <!-- Social Links -->
                <p style="margin-left: 10%;"></p>
-              <div class="mt-2">
+              <div class="mt-2 social-links">
                 <a href="https://www.facebook.com/makemecum.yoti" target="_blank" class="text-secondary mx-2">
                   <i class="bi bi-facebook fs-5"></i>
                 </a>
@@ -180,6 +194,7 @@
   <script src="./assets/hero.js"></script>
   <script src="./assets/disableInspect.js"></script>
   <script src="./assets/quotes.js"></script>
+  <script src="./assets/navbar-sticky.js"></script>
   <script type="module" src="./assets/ver-analytics.js"></script>
 </body>
 </html>
