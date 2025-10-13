@@ -9,24 +9,10 @@
     const btn = document.getElementById('whatsapp-btn');
     if (!btn) return console.warn('whatsapp-draggable.js: #whatsapp-btn not found');
 
-    btn.style.position = btn.style.position || 'fixed';
+    btn.style.position = 'fixed';
 
-    const saved = localStorage.getItem('whatsapp-btn-pos');
-
-    if (saved) {
-      try {
-        const pos = JSON.parse(saved);
-        btn.style.left = pos.left + 'px';
-        btn.style.top = pos.top + 'px';
-        btn.style.right = 'auto';
-        btn.style.bottom = 'auto';
-      } catch (e) {
-        console.warn('Invalid saved position', e);
-        resetToDefault();
-      }
-    } else {
-      resetToDefault();
-    }
+    // ✅ Always start in default position
+    resetToDefault();
 
     function resetToDefault() {
       btn.style.left = 'auto';
@@ -90,9 +76,6 @@
       isDragging = false;
       btn.style.cursor = 'grab';
       btn.style.transition = 'all 0.15s ease';
-      const rect = btn.getBoundingClientRect();
-      const pos = { left: Math.round(rect.left), top: Math.round(rect.top) };
-      localStorage.setItem('whatsapp-btn-pos', JSON.stringify(pos));
       setTimeout(() => moved = false, 0);
     }
 
@@ -112,9 +95,7 @@
       }
     });
 
-    btn.addEventListener('dblclick', function () {
-      localStorage.removeItem('whatsapp-btn-pos');
-      resetToDefault();
-    });
+    // ✅ Double-click returns to bottom-right
+    btn.addEventListener('dblclick', resetToDefault);
   });
 })();
