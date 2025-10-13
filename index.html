@@ -20,20 +20,6 @@
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
-  <style>
-  body {
-    padding-top: 80px; /* Prevent content from hiding behind navbar */
-  }
-
-  .navbar {
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.95) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  }
-</style>
 </head>
 <body id="mainBody" class="background-color d-flex flex-column min-vh-100">
   <!-- Falling Snow Canvas -->
@@ -76,7 +62,17 @@
       </div>
     </nav>
   </header>
-  <!-- End Navigation -->
+  <!-- WhatsApp Floating Chat Button -->
+  <a href="https://wa.me/639816195241?text=Hi%20Kiven!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." 
+    target="_blank" 
+    id="whatsapp-btn"
+    class="btn btn-success rounded-circle shadow-lg"
+    style="position:fixed; bottom:25px; right:25px; z-index:9999; 
+            width:60px; height:60px; display:flex; align-items:center; 
+            justify-content:center; background:#25D366; border:none; cursor:grab;">
+    <i class="bi bi-whatsapp fs-3 text-white"></i>
+  </a>
+
    <!-- Hero / Main Content -->
   <main class="flex-grow-1">
     <!-- <hr class="adaptive-hr"> -->
@@ -196,6 +192,7 @@
   <script src="./assets/quotes.js"></script>
   <script src="./assets/navbar-sticky.js"></script>
   <script type="module" src="./assets/ver-analytics.js"></script>
+  <script src="./assets/whatsapp.js"></script>
 </body>
 </html>
 
