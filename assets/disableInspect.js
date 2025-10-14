@@ -63,6 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>⚠️ Do not Inspect The Page to Restart ⚠️</p>
       </div>`;
     console.clear();
-    setTimeout(() => (window.location.href = "/"), 1500);
+    setTimeout(() => (window.location.href = "/"), 1000);
   }
 });
