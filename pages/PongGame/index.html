@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Pong Game</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Pong Game</title>
+<link rel="stylesheet" href="../PongGame/style.css">
 </head>
 <body>
-    <div class="scoreboard"></div>
-    <h1>Pong Game</h1>
-    <div id="gameContainer">
-        <canvas id="gameCanvas" width="800" height="500"></canvas>
+  <h1>⚡ Neon Pong</h1>
+
+  <div class="top-controls">
+    <div class="difficulty-container">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="normal">Normal</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
     </div>
-    <script src="script.js"></script>
+
+    <button id="pauseBtn">⏸ Pause</button>
+  </div>
+
+  <div id="gameContainer">
+    <canvas id="gameCanvas"></canvas>
+    <div id="pauseOverlay">⏸ Game Paused</div>
+  </div>
+
+  <div class="scoreboard">
+    <div class="score">Human: <span id="playerScore">0</span></div>
+    <div class="best-score">Computer: <span id="aiScore">0</span></div>
+  </div>
+
+<script src="../PongGame/script.js"></script>
+<script src="/assets/disableInspect.js"></script>
 </body>
 </html>
