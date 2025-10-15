@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap Component Generator</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="../Page_Gen/styles.css" rel="stylesheet">
+</head>
+<body class="bg-secondary">
+
+    <div class="container my-4">
+        <h1 class="mb-4 text-center text-warning">Bootstrap Site Generator</h1>
+        <h3 class="text-dark">Developed By: <a href="kiven-mailbox.dev" class="text-warning">Kiven Etol</a></h3>
+
+        <div class="mb-3">
+            <label class="form-label">Select Site Type:</label><br>
+            <input type="radio" name="siteType" value="portfolio" checked> Portfolio
+            <input type="radio" name="siteType" value="ecommerce"> E-Commerce
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Navbar Style:</label>
+            <select id="navStyle" class="form-select w-auto d-inline-block">
+                <option value="standard" selected>Standard</option>
+                <option value="sticky">Sticky</option>
+            </select>
+        </div>
+
+        <div class="row row-cols-2 row-cols-md-3 g-2 mb-3" id="generatedCheckboxes"></div>
+
+        <div class="mb-3">
+            <button id="generateBtn" class="btn btn-primary me-2">Generate</button>
+            <button id="previewBtn" class="btn btn-danger me-2">Open Preview</button>
+            <button id="copyBtn" class="btn btn-success me-2">Copy HTML</button>
+            <button id="downloadBtn" class="btn btn-warning">Download HTML</button>
+        </div>
+
+        <pre id="codeOutput"></pre>
+        <div id="preview"></div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../Page_Gen/script.js"></script>
+<script src="../Page_Gen/warning.js"></script>
+</body>
+</html>
