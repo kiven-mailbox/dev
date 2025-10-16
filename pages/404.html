@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚠️ Warning - 404 Page Not Found</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: linear-gradient(180deg, #1a0000, #3b0000, #000);
+      color: #ff4040;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 10rem;
+      color: #ff1b1b;
+      text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { text-shadow: 0 0 10px #ff0000; }
+      to { text-shadow: 0 0 40px #ff3333, 0 0 80px #ff0000; }
+    }
+
+    p {
+      font-size: 1.8rem;
+      color: #fff;
+      margin: 20px 0;
+      font-weight: 500;
+    }
+
+    .warning-icon {
+      font-size: 5rem;
+      color: yellow;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+
+    a {
+      margin-top: 25px;
+      text-decoration: none;
+      color: #fff;
+      background: #ff1b1b;
+      padding: 14px 40px;
+      border-radius: 5px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+      box-shadow: 0 0 15px #ff0000;
+    }
+
+    a:hover {
+      background: #fff;
+      color: #ff0000;
+      box-shadow: 0 0 30px #ff0000, 0 0 60px #ff3333;
+      transform: scale(1.05);
+    }
+
+    .warning-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(45deg, #ff0000 0, #ff0000 10px, #000 10px, #000 20px);
+      opacity: 0.15;
+      z-index: 0;
+      animation: move-bg 5s linear infinite;
+    }
+
+    @keyframes move-bg {
+      from { background-position: 0 0; }
+      to { background-position: 100px 100px; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div class="warning-bg"></div>
+  <div class="container">
+    <div class="warning-icon">⚠️</div>
+    <h1>404</h1>
+    <p>Warning! The page you're looking for could not be found.<br>It may have been moved, deleted, or never existed.</p>
+    <a href="/">Return to Safety</a>
+  </div>
+
+  <script>
+    // Flash red border effect
+    setInterval(() => {
+      document.body.style.boxShadow = 'inset 0 0 80px 10px rgba(255,0,0,0.3)';
+      setTimeout(() => {
+        document.body.style.boxShadow = 'inset 0 0 0 0 rgba(255,0,0,0)';
+      }, 400);
+    }, 1000);
+  </script>
+</body>
+</html>
