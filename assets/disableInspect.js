@@ -1,13 +1,10 @@
-// assets/disableInspect.js
-// Aggressive anti-inspect + fake security lockdown
+// Aggressive anti-inspect + fake security lockdown yatis
 
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.getElementById("mainBody") || document.body;
 
-  // Disable right-click
   body.addEventListener("contextmenu", (e) => e.preventDefault());
 
-  // Disable all hotkeys for DevTools
   document.onkeydown = function (e) {
     if (
       e.keyCode === 123 || // F12
@@ -20,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Detect DevTools via window resize
   setInterval(() => {
     if (
       window.outerWidth - window.innerWidth > 200 ||
@@ -30,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 1000);
 
-  // Detect console open
   (function detectConsole() {
     const element = new Image();
     Object.defineProperty(element, "id", {
@@ -93,13 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.clear();
 
-    // Disable all further input
     document.onkeydown = () => false;
     document.oncontextmenu = () => false;
     document.onclick = () => false;
     document.onmousemove = () => false;
 
-    // Infinite restart every second
     setInterval(() => {
       window.location.reload(true);
     }, 1000);
