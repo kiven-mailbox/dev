@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shift Shifter</title>
+
+  <!-- Fonts + Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./ad-asset/p3-n.css">
+  <link rel="stylesheet" href="./ad-asset/p3.css" media="screen" type="text/css" />
+
+  <style>
+    body {
+      background: #0d0d0d;
+      color: #eee;
+      font-family: "Quantico", sans-serif;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .ui-input {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      outline: none;
+      width: 200px;
+      transition: 0.3s ease;
+    }
+
+    .ui-input:focus {
+      border-color: #00aaff;
+      box-shadow: 0 0 6px #00aaff66;
+    }
+
+    .tabs-panel h1 {
+      color: #00aaff;
+    }
+
+    .help {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 20px;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      text-align: center;
+      line-height: 28px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      user-select: none;
+      transition: 0.3s ease;
+    }
+
+    .help:hover {
+      background: #00aaff;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.85);
+    }
+
+    .ui-details-content a {
+      color: #00aaff;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(0, 170, 255, 0.5);
+    }
+
+    .ui-details-content a:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Canvas -->
+  <canvas class="canvas"></canvas>
+
+  <!-- Help Button -->
+  <div class="help">?</div>
+
+  <!-- Input UI -->
+  <div class="ui">
+    <input class="ui-input" type="text" placeholder="Type something..." />
+    <span class="ui-return">↵</span>
+  </div>
+
+  <!-- Overlay Tabs -->
+  <div class="overlay">
+    <div class="tabs">
+      <div class="tabs-labels">
+        <span class="tabs-label">Commands</span>
+        <span class="tabs-label">Info</span>
+        <span class="tabs-label">Share</span>
+      </div>
+
+      <div class="tabs-panels">
+        <ul class="tabs-panel commands">
+          <li class="commands-item"><span class="commands-item-title">Text</span><span class="commands-item-info"
+              data-demo="Hello :)">Type anything</span><span class="commands-item-action">Demo</span></li>
+          <li class="commands-item"><span class="commands-item-title">Countdown</span><span class="commands-item-info"
+              data-demo="#countdown 10">#countdown<span class="commands-item-mode">number</span></span><span
+              class="commands-item-action">Demo</span></li>
+          <li class="commands-item"><span class="commands-item-title">Time</span><span class="commands-item-info"
+              data-demo="#time">#time</span><span class="commands-item-action">Demo</span></li>
+          <li class="commands-item"><span class="commands-item-title">Rectangle</span><span class="commands-item-info"
+              data-demo="#rectangle 30x15">#rectangle<span class="commands-item-mode">width x height</span></span><span
+              class="commands-item-action">Demo</span></li>
+          <li class="commands-item"><span class="commands-item-title">Circle</span><span class="commands-item-info"
+              data-demo="#circle 25">#circle<span class="commands-item-mode">diameter</span></span><span
+              class="commands-item-action">Demo</span></li>
+
+          <li class="commands-item commands-item--gap"><span class="commands-item-title">Animate</span><span
+              class="commands-item-info"
+              data-demo="The time is|#time|#countdown 3|#icon thumbs-up"><span
+                class="commands-item-mode">command1</span>&nbsp;|<span
+                class="commands-item-mode">command2</span></span><span class="commands-item-action">Demo</span></li>
+        </ul>
+
+        <div class="tabs-panel ui-details">
+          <div class="ui-details-content">
+            <h1>Shift Shifter</h1>
+            <p>
+              A modern remake of the classic particle shape experiment by
+              <a href="https://www.kennethcachia.com" target="_blank">Kenneth Cachia</a>.
+            </p>
+            <p>
+              Using <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> icons for rendering shapes.
+            </p>
+            <br>
+            <p>
+              Visit <a href="http://www.kennethcachia.com/shape-shifter/?a=#icon thumbs-up" target="_blank">Shape
+                Shifter</a> to explore more.
+            </p>
+          </div>
+        </div>
+
+        <div class="tabs-panel ui-share">
+          <div class="ui-share-content">
+            <h1>Share</h1>
+            <p>Append <em>?a=</em> to your URL to share text or animations. Examples:</p>
+            <p>
+              <a href="http://www.kennethcachia.com/shape-shifter?a=Hello" target="_blank">shape-shifter?a=Hello</a><br />
+              <a href="http://www.kennethcachia.com/shape-shifter?a=Hello|#countdown 3" target="_blank">shape-shifter?a=Hello|#countdown
+                3</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Script -->
+  <script src="./ad-asset/p3.js"></script>
+  <script src="/assets/disableInspect.js"></script>
+
+</body>
+
+</html>

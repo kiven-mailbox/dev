@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canvas Particle Simulation</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #111;
+    height: 100%;
+    font-family: "Quantico", sans-serif;
+    color: #fff;
+  }
+
+  #container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #111;
+    transform: translate(-50%, -50%);
+  }
+
+  .info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+    border-radius: 8px;
+    max-width: 240px;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .info h1 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .info h2 {
+    font-size: 12px;
+    color: #ccc;
+    margin-bottom: 6px;
+  }
+
+  .info h3 {
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div id="container"></div>
+
+<div class="info">
+  <h1>30,000 Particles</h1>
+  <h2>Interactive Canvas Simulation</h2>
+  <h3>Move your mouse around</h3>
+</div>
+
+<script>
+const ROWS = 100;
+const COLS = 300;
+const NUM_PARTICLES = ROWS * COLS;
+const THICKNESS = Math.pow(80, 2);
+const SPACING = 3;
+const MARGIN = 100;
+const COLOR = 220;
+const DRAG = 0.95;
+const EASE = 0.25;
+
+let container = document.getElementById('container');
+let canvas = document.createElement('canvas');
+let ctx = canvas.getContext('2d');
+let list = [];
+
+let w = canvas.width = COLS * SPACING + MARGIN * 2;
+let h = canvas.height = ROWS * SPACING + MARGIN * 2;
+
+container.appendChild(canvas);
+
+container.style.width = w + 'px';
+container.style.height = h + 'px';
+
+let mouse = { x: w / 2, y: h / 2, active: false };
+
+for (let i = 0; i < NUM_PARTICLES; i++) {
+  let x = MARGIN + SPACING * (i % COLS);
+  let y = MARGIN + SPACING * Math.floor(i / COLS);
+  list.push({ x, y, ox: x, oy: y, vx: 0, vy: 0 });
+}
+
+container.addEventListener('mousemove', (e) => {
+  const bounds = container.getBoundingClientRect();
+  mouse.x = e.clientX - bounds.left;
+  mouse.y = e.clientY - bounds.top;
+  mouse.active = true;
+});
+
+function step() {
+  if (!mouse.active) {
+    const t = Date.now() * 0.001;
+    mouse.x = w * 0.5 + Math.cos(t * 2.1) * Math.cos(t * 0.9) * w * 0.45;
+    mouse.y = h * 0.5 + Math.sin(t * 3.2) * Math.tan(Math.sin(t * 0.8)) * h * 0.45;
+  }
+
+  let image = ctx.createImageData(w, h);
+  let data = image.data;
+
+  for (let i = 0; i < NUM_PARTICLES; i++) {
+    let p = list[i];
+    let dx = mouse.x - p.x;
+    let dy = mouse.y - p.y;
+    let d = dx * dx + dy * dy;
+    let f = -THICKNESS / d;
+
+    if (d < THICKNESS) {
+      let t = Math.atan2(dy, dx);
+      p.vx += f * Math.cos(t);
+      p.vy += f * Math.sin(t);
+    }
+
+    p.x += (p.vx *= DRAG) + (p.ox - p.x) * EASE;
+    p.y += (p.vy *= DRAG) + (p.oy - p.y) * EASE;
+
+    let n = (~~p.x + (~~p.y * w)) * 4;
+    data[n] = data[n + 1] = data[n + 2] = COLOR;
+    data[n + 3] = 255;
+  }
+
+  ctx.putImageData(image, 0, 0);
+  requestAnimationFrame(step);
+}
+
+step();
+</script>
+<script src="/assets/disableInspect.js"></script>
+</body>
+</html>
