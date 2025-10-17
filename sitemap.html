@@ -1,262 +1,447 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sitemap — kiven-dev.pages.dev</title>
-  <meta name="description" content="Interactive sitemap for kiven-dev.pages.dev — quick search, open, copy, and export links." />
-  <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#7c3aed; --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.02); --radius:14px; --shadow: 0 6px 24px rgba(2,6,23,0.6);
-      --glass-border: rgba(255,255,255,0.04);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent),
-      linear-gradient(180deg,var(--bg), #071025); color:#e6eef8; -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale; padding:40px; display:flex; align-items:flex-start; justify-content:center;
-    }
-    .wrap{max-width:1100px; width:100%;}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="dns-prefetch" href="https://code.jquery.com/">
+        <link rel="dns-prefetch" href="https://cdn.mysitemapgenerator.com/">
+        <title>Sitemap</title>
+        <meta name="description" content="kiven-works.pages.dev Sitemap"/>
+        <meta name="keywords" content="kiven-works.pages.dev, Sitemap"/>
+        <meta name="generator" content="Mystemapgenerator.com HTML Sitemap"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+        <style type="text/css">
+            * {
+                box-sizing: border-box !important;
+            }
 
-    header{display:flex; gap:16px; align-items:center; margin-bottom:18px}
-    .brand{display:flex; gap:12px; align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:grid;place-items:center;box-shadow:var(--shadow);font-weight:700}
-    .brand h1{margin:0;font-size:18px;letter-spacing:0.2px}
-    .brand p{margin:0;color:var(--muted);font-size:13px}
+            html {
+                font-family: sans-serif;
+            }
 
-    .controls{margin-left:auto; display:flex; gap:10px; align-items:center}
-    .search{position:relative}
-    .search input{background:var(--glass); border:1px solid var(--glass-border); padding:10px 40px 10px 12px; border-radius:10px; color:inherit; width:320px}
-    .search svg{position:absolute; right:10px; top:50%; transform:translateY(-50%); opacity:0.8}
+            body {
+                background: #fff;
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 5px;
+                font: 14px "Arial", Tahoma, sans-serif;
+                min-height: 100%;
+            }
 
-    .actions{display:flex; gap:8px}
-    button.btn{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border:1px solid var(--glass-border); color:inherit; padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600}
-    button.btn.ghost{background:transparent}
-    button.btn:active{transform:translateY(1px)}
+            h1 {
+                font-size: 26px;
+            }
 
-    main{display:grid; grid-template-columns:1fr 360px; gap:20px}
-    .panel{background:linear-gradient(180deg,var(--card), rgba(7,16,29,0.6)); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); border:1px solid var(--glass-border)}
+            div.footerinfo {
+                margin-top: 16px;
+                color: #666;
+                font-size: 12px;
+                text-align: right;
+            }
 
-    .list{display:grid; gap:10px}
-    .link{display:flex; align-items:center; gap:12px; padding:12px; border-radius:12px; background:linear-gradient(180deg,var(--glass-2), transparent); border:1px solid rgba(255,255,255,0.02); transition:transform .16s ease, box-shadow .16s ease}
-    .link:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(2,6,23,0.6)}
-    .fav{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
-    .meta{flex:1; overflow:hidden}
-    .meta a{display:block;color:#dbeafe;text-decoration:none;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .meta small{display:block;color:var(--muted); font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+            div.footerinfo * {
+                font-size: 12px;
+            }
 
-    .link .actions{margin-left:auto}
-    .pill{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-size:12px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+            .sitemap {
+                margin: 5em 0
+            }
 
-    .right h3{margin-top:0}
-    .stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02),transparent); padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);font-weight:700}
+            .primaryNav {
+                clear: both;
+                width: 100%;
+                margin-top: 3em 0
+            }
 
-    footer{margin-top:14px;color:var(--muted); font-size:13px; text-align:center}
+            .primaryNav #home {
+                position: absolute;
+                margin-top: -3em;
+                margin-bottom: 0;
+                min-width: 14.5em;
+                width: 100%
+            }
 
-    /* responsive */
-    @media (max-width:880px){
-      main{grid-template-columns:1fr}
-      .search input{width:180px}
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">KD</div>
-        <div>
-          <h1>Sitemap — kiven-dev.pages.dev</h1>
-          <p>Interactive index of public pages · quick actions · export</p>
+            .primaryNav #home:before {
+                display: none
+            }
+
+            .primaryNav #home.long-cell:before {
+                display: block;
+                position: absolute;
+                border-width: 0;
+                border-color: #ccc;
+                border-style: solid;
+                z-index: -1;
+                border-left-width: 2px;
+                border-top-width: 2px;
+                top: 1.375em
+            }
+
+            @media screen and (max-width: 1111px) {
+                .primaryNav #home.long-cell:before {
+                    left:-40px;
+                    box-shadow: -10px 0 0 0 #fff
+                }
+            }
+
+            .primaryNav #home img {
+                float: left;
+                margin-right: 4px
+            }
+
+            .primaryNav ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                position: relative;
+                padding-inline-start:40px}
+
+            .primaryNav li {
+                flex: 1;
+                flex-basis: 14.5em;
+                padding-right: 1.25em;
+                position: relative;
+                min-width: 14.5em
+            }
+
+            .primaryNav li ul li {
+                min-width: 12.5em
+            }
+
+            .primaryNav li ul li ul li {
+                min-width: 10.5em
+            }
+
+            .primaryNav>ul>li {
+                margin-top: 3em
+            }
+
+            .primaryNav li a {
+                margin: 0;
+                padding: .875em .9375em .9375em .9375em;
+                display: block;
+                font-size: .9375em;
+                background: #fff;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                box-shadow: 0 3px 3px #666;
+                text-decoration: none
+            }
+
+            .primaryNav li a:hover {
+                box-shadow: 0 3px 3px 1px #666
+            }
+
+            .primaryNav a:link:after,.primaryNav a:visited:after,.utilityNav a:link:after,.utilityNav a:visited:after {
+                display: block;
+                font-weight: 600;
+                font-size: .75em;
+                margin-top: .25em;
+                word-wrap: break-word;
+                color: #666
+            }
+
+            .primaryNav ul ul {
+                display: block
+            }
+
+            .primaryNav ul ul li {
+                padding-top: .9875em;
+                padding-right: 0
+            }
+
+            .primaryNav ul ul li:first-child {
+                padding-top: 2em
+            }
+
+            .primaryNav ul ul ul {
+                margin-top: .6em;
+                padding-top: .6em;
+                padding-bottom: .625em
+            }
+
+            .primaryNav ul ul ul li {
+                padding-top: .3125em;
+                padding-bottom: .3125em
+            }
+
+            .primaryNav ul ul ul li a {
+                font-size: .75em;
+                padding: .75em;
+                min-width: 90%;
+                width: auto;
+                margin-right: 0;
+                margin-left: auto
+            }
+
+            .primaryNav ul ul ul li:first-child {
+                padding-top: 1em
+            }
+
+            .primaryNav ul ul ul li a:link:after,.primaryNav ul ul ul li a:visited:after {
+                font-size: .75em
+            }
+
+            .primaryNav ul ul ul ul {
+                margin-top: 0;
+                padding-top: .3125em;
+                padding-bottom: .3125em
+            }
+
+            .primaryNav ul ul ul ul li a {
+                padding: .75em;
+                min-width: 80%;
+                width: auto
+            }
+
+            .primaryNav ul ul ul ul li a:link:after,.primaryNav ul ul ul ul li a:visited:after {
+                display: none
+            }
+
+            .primaryNav ul li:after,.primaryNav ul li:before,.primaryNav ul:after,.primaryNav ul:before {
+                display: block;
+                content: '';
+                position: absolute;
+                border-width: 0;
+                border-color: #ccc;
+                border-style: solid;
+                z-index: -2
+            }
+
+            .primaryNav>ul>li:before {
+                height: 1.375em;
+                top: -1.375em;
+                right: calc(50% + .625em);
+                width: calc(100% - 2px);
+                border-top-width: 2px;
+                border-right-width: 2px
+            }
+
+            .primaryNav>ul>li:first-child+li:before {
+                border-top-width: 0;
+                height: 5em;
+                top: -5em
+            }
+
+            .primaryNav ul ul li:after {
+                width: 50%;
+                height: .9875em;
+                top: 0;
+                right: 1px;
+                border-left-width: 2px
+            }
+
+            .primaryNav ul ul li:first-child:before {
+                width: 50%;
+                height: 1.3125em;
+                top: .9875em;
+                right: 1px;
+                border-left-width: 2px
+            }
+
+            .primaryNav>ul>li:last-child:after {
+                border-bottom-width: 0
+            }
+
+            .primaryNav ul ul ul li:before {
+                width: calc(50% - 15px)!important;
+                height: calc(100% - 2px);
+                top: -50%;
+                left: 0;
+                border-left-width: 2px;
+                border-bottom-width: 2px
+            }
+
+            .primaryNav ul ul ul li:first-child:before {
+                height: 2.125em;
+                top: -1px;
+                border-top-width: 2px
+            }
+
+            .primaryNav ul ul ul:before {
+                width: 50%;
+                height: 1.25em;
+                top: -10px;
+                right: 1px;
+                border-left-width: 2px
+            }
+
+            .primaryNav ul ul ul li:after {
+                border-width: 0
+            }
+
+            .primaryNav ul ul ul ul li:before,.primaryNav ul ul ul ul li:first-child:before {
+                display: none
+            }
+
+            .primaryNav ul ul ul ul:before {
+                width: 1px;
+                height: calc(100% + 2.5em);
+                top: -2.5em;
+                left: 0;
+                border-left-width: 2px
+            }
+
+            @media screen and (max-width: 30em) {
+                .primaryNav ul {
+                    display:block
+                }
+
+                .primaryNav li {
+                    width: 100%;
+                    padding-right: 0
+                }
+
+                .primaryNav #home {
+                    width: 100%;
+                    position: relative;
+                    margin-bottom: -1em;
+                    margin-top: 0
+                }
+            }
+
+            @media screen and (min-width: 30em) {
+                .primaryNav>ul>li {
+                    max-width:50%
+                }
+            }
+
+            @media screen and (min-width: 38.5em) {
+                .primaryNav>ul>li {
+                    max-width:33%
+                }
+            }
+
+            @media screen and (min-width: 50em) {
+                .primaryNav>ul>li {
+                    max-width:25%
+                }
+            }
+
+            @media screen and (min-width: 61em) {
+                .primaryNav>ul>li {
+                    max-width:20%
+                }
+            }
+
+            @media screen and (min-width: 73em) {
+                .primaryNav>ul>li {
+                    max-width:16.66%
+                }
+            }
+
+            @media screen and (min-width: 84.5em) {
+                .primaryNav>ul>li {
+                    max-width:14.285%
+                }
+            }
+
+            @media screen and (min-width: 96em) {
+                .primaryNav>ul>li {
+                    max-width:12.5%
+                }
+            }
+
+            @media screen and (min-width: 107.5em) {
+                .primaryNav>ul>li {
+                    max-width:11.11%
+                }
+            }
+
+            @media screen and (min-width: 119em) {
+                .primaryNav>ul>li {
+                    max-width:10%
+                }
+            }
+
+            a[href$="#"] {
+                cursor: default;
+                color: #333
+            }
+
+            .collapsed_item {
+                display: none!important;
+                cursor: pointer!important
+            }
+
+            .expand_items a {
+                color: #333!important;
+                text-align: center;
+                cursor: pointer!important
+            }
+
+            a[href$="#"]:not(.collapsed_item,.expand_items a):before {
+                content: ""
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sitemap</h1>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="https://cdn.mysitemapgenerator.com/api/htmlsitemaps.min.js"></script>
+        <div class="sitemap">
+            <nav class="primaryNav">
+                <ul>
+                    <li id="home">
+                        <a href="https://kiven-works.pages.dev/">
+                            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjUxMHB4IiBoZWlnaHQ9IjUxMHB4IiB2aWV3Qm94PSIwIDAgNTEwIDUxMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEwIDUxMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGcgaWQ9ImhvbWUiPg0KCQk8cG9seWdvbiBwb2ludHM9IjIwNCw0NzEuNzUgMjA0LDMxOC43NSAzMDYsMzE4Ljc1IDMwNiw0NzEuNzUgNDMzLjUsNDcxLjc1IDQzMy41LDI2Ny43NSA1MTAsMjY3Ljc1IDI1NSwzOC4yNSAwLDI2Ny43NSANCgkJCTc2LjUsMjY3Ljc1IDc2LjUsNDcxLjc1IAkJIi8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" width="16" height="16" alt="homepage"/>Home Page
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="return false">Pages</a>
+                        <ul>
+                            <li>
+                                <a href="https://kiven-works.pages.dev/pages/contact">Contact Me</a>
+                            </li>
+                            <li>
+                                <a href="https://kiven-works.pages.dev/pages/aboutme">About Me</a>
+                            </li>
+                            <li>
+                                <a href="https://kiven-works.pages.dev/pages/projects">Sari-sari Store management</a>
+                            </li>
+                            <li>
+                                <a href="https://kiven-works.pages.dev/pages/certificates">Certificates</a>
+                            </li>
+                            <li>
+                                <a href="https://kiven-works.pages.dev/pages/skills">My-Skills</a>
+                            </li>
+                            <li class="collapsed_item">
+                                <a href="https://kiven-works.pages.dev/pages/resume">Skills & Abilities</a>
+                            </li>
+                            <li class="collapsed_item">
+                                <a href="#" onclick="return false">Projects</a>
+                                <ul>
+                                    <li>
+                                        <a href="https://kiven-works.pages.dev/pages/Projects/Page_Gen/">Bootstrap Site Generator</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="collapsed_item">
+                                <a href="https://kiven-works.pages.dev/pages/PongGame/">⚡ Neon Pong</a>
+                            </li>
+                            <li class="expand_items">
+                                <a href="#">&#x25BC;</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onclick="return false">Policy</a>
+                        <ul>
+                            <li>
+                                <a href="https://kiven-works.pages.dev/policy/terms">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a href="https://kiven-works.pages.dev/policy/privacy">No Data Collection</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://kiven-works.pages.dev/sitemap">Sitemap — kiven-dev.pages.dev</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-      </div>
-
-      <div class="controls">
-        <div class="search">
-          <input id="q" placeholder="Search links or paths..." aria-label="Search sitemap" />
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-            <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"></circle>
-          </svg>
-        </div>
-        <div class="actions">
-          <button class="btn" id="openAll">Open all</button>
-          <button class="btn ghost" id="exportCsv">Export CSV</button>
-          <button class="btn ghost" id="copyAll">Copy all</button>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <section class="panel left">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-          <h2 style="margin:0">Links</h2>
-          <div class="pill" id="count">0 links</div>
-        </div>
-
-        <div class="list" id="list">
-          <!-- links injected here -->
-        </div>
-
-        <footer>Tip: Use the search box to filter. Click icons to open or copy individual links.</footer>
-      </section>
-
-      <aside class="panel right">
-        <h3>Overview</h3>
-        <div class="stats">
-          <div class="stat" id="total">0 total</div>
-          <div class="stat" id="external">0 external</div>
-          <div class="stat" id="internal">0 internal</div>
-        </div>
-
-        <h3 style="margin-bottom:8px">Quick preview</h3>
-        <div id="previewPane" style="background:var(--glass); border-radius:10px; padding:12px; min-height:140px; color:var(--muted); font-size:13px">Select a link to preview its URL or email</div>
-
-        <h3 style="margin-top:14px">Settings</h3>
-        <label style="display:flex;gap:8px;align-items:center;margin-top:8px"><input type="checkbox" id="openNewTab" checked /> Open in new tab by default</label>
-        <label style="display:flex;gap:8px;align-items:center;margin-top:8px"><input type="checkbox" id="showOnlyHttps" /> Only show HTTPS links</label>
-
-      </aside>
-    </main>
-  </div>
-
-  <script>
-    (()=>{
-      const raw = [
-"https://kiven-dev.pages.dev",
-"https://kiven-dev.pages.dev/./index.html",
-"https://kiven-dev.pages.dev/./pages/aboutme.html",
-"https://kiven-dev.pages.dev/./pages/skills.html",
-"https://kiven-dev.pages.dev/./pages/contact.html",
-"https://kiven-dev.pages.dev/./pages/certificates.html",
-"https://kiven-dev.pages.dev/./pages/resume.html",
-"https://kiven-dev.pages.dev/./pages/projects.html",
-"https://kiven-dev.pages.dev/mailto:cantilakiven.mailbox01@gmail.com",
-"https://kiven-dev.pages.dev/./SECURITY.md",
-"https://kiven-dev.pages.dev/./policy/privacy.html",
-"https://kiven-dev.pages.dev/./policy/terms.html",
-"https://kiven-dev.pages.dev/./sitemap.html"
-      ];
-
-      const listEl = document.getElementById('list');
-      const q = document.getElementById('q');
-      const countEl = document.getElementById('count');
-      const totalEl = document.getElementById('total');
-      const extEl = document.getElementById('external');
-      const intEl = document.getElementById('internal');
-      const preview = document.getElementById('previewPane');
-
-      function normalize(url){
-        // clean repeated ./ and remove trailing slashes
-        return url.replace(/\.\//g,'').replace(/\/$/, '');
-      }
-
-      const items = raw.map(u=>{
-        const clean = normalize(u);
-        let type = 'internal';
-        if(clean.startsWith('mailto:')) type='email';
-        else if(/^https?:\/\//.test(clean) && !clean.includes('kiven-dev.pages.dev')) type='external';
-        return {raw:u, url:clean, type, label: clean.replace(/https?:\/\//,'')};
-      });
-
-      function render(filter=''){
-        const showOnlyHttps = document.getElementById('showOnlyHttps').checked;
-        const filtered = items.filter(it=>{
-          if(showOnlyHttps && !it.url.startsWith('https://')) return false;
-          if(!filter) return true;
-          return it.url.toLowerCase().includes(filter.toLowerCase());
-        });
-        listEl.innerHTML = '';
-        filtered.forEach(it=>{
-          const a = document.createElement('a');
-          a.href = it.url.includes('mailto:')? it.url : it.url;
-          a.target = document.getElementById('openNewTab').checked ? '_blank' : '_self';
-          a.rel = 'noopener noreferrer';
-
-          const card = document.createElement('div'); card.className='link';
-          const fav = document.createElement('div'); fav.className='fav'; fav.innerHTML = iconFor(it.type);
-          const meta = document.createElement('div'); meta.className='meta';
-          const title = document.createElement('a'); title.textContent = it.url; title.href = it.url.includes('mailto:')? it.url : it.url; title.target = '_blank';
-          const small = document.createElement('small'); small.textContent = it.type.toUpperCase();
-          meta.appendChild(title); meta.appendChild(small);
-
-          const actions = document.createElement('div'); actions.className='actions';
-          const openBtn = document.createElement('button'); openBtn.className='btn'; openBtn.title='Open link'; openBtn.innerHTML='Open';
-          openBtn.onclick = (e)=>{ e.preventDefault(); window.open(it.url, document.getElementById('openNewTab').checked ? '_blank':'_self'); }
-          const copyBtn = document.createElement('button'); copyBtn.className='btn ghost'; copyBtn.title='Copy link'; copyBtn.innerHTML='Copy';
-          copyBtn.onclick = async (e)=>{ e.preventDefault(); await navigator.clipboard.writeText(it.url); flash(copyBtn,'Copied'); }
-
-          actions.appendChild(openBtn); actions.appendChild(copyBtn);
-
-          card.appendChild(fav); card.appendChild(meta); card.appendChild(actions);
-          listEl.appendChild(card);
-
-          // hover preview
-          card.addEventListener('mouseenter', ()=>{ preview.textContent = it.url; });
-        });
-
-        countEl.textContent = filtered.length + ' links';
-        totalEl.textContent = items.length + ' total';
-        extEl.textContent = items.filter(i=>i.type==='external').length + ' external';
-        intEl.textContent = items.filter(i=>i.type==='internal').length + ' internal';
-      }
-
-      function iconFor(type){
-        if(type==='email') return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 6.5h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M21 6.5v11.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 6.5l9 7 9-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-        if(type==='external') return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 3h7v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 21H3V3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-        return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="12" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
-      }
-
-      function flash(el, text){
-        const original = el.innerHTML;
-        el.innerHTML = text;
-        setTimeout(()=> el.innerHTML = original, 1200);
-      }
-
-      // search
-      q.addEventListener('input', ()=> render(q.value));
-      document.getElementById('showOnlyHttps').addEventListener('change', ()=> render(q.value));
-      document.getElementById('openNewTab').addEventListener('change', ()=> render(q.value));
-
-      // open all (careful!)
-      document.getElementById('openAll').addEventListener('click', ()=>{
-        if(!confirm('Open all visible links? This will open multiple tabs.')) return;
-        const anchors = Array.from(document.querySelectorAll('.meta a'));
-        anchors.forEach(a=> window.open(a.href, '_blank'));
-      });
-
-      // copy all
-      document.getElementById('copyAll').addEventListener('click', async ()=>{
-        const showOnlyHttps = document.getElementById('showOnlyHttps').checked;
-        const filtered = items.filter(it=> !showOnlyHttps || it.url.startsWith('https://'));
-        const text = filtered.map(i=>i.url).join('\n');
-        await navigator.clipboard.writeText(text);
-        flash(document.getElementById('copyAll'),'Copied');
-      });
-
-      // export csv
-      document.getElementById('exportCsv').addEventListener('click', ()=>{
-        const rows = items.map(i=> [i.url, i.type].join(','));
-        const csv = 'url,type\n' + rows.join('\n');
-        const blob = new Blob([csv], {type:'text/csv'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a'); a.href = url; a.download = 'sitemap-kiven-dev.csv'; a.click(); URL.revokeObjectURL(url);
-      });
-
-      // initial render
-      render();
-
-      // keyboard: / focuses search
-      window.addEventListener('keydown', (e)=>{
-        if(e.key === '/' && document.activeElement !== q){ e.preventDefault(); q.focus(); }
-      });
-
-    })()
-  </script>
-  <script src="./assets/disableInspect.js"></script>
-</body>
-</html>
+</div>
+<div class="footerinfo">
+    Created with <a href="https://www.mysitemapgenerator.com/start/free.str.html" target="_blank">MySitemapGenerator</a>
+</div>
+</body></html>

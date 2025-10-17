@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SURPRISE</title>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at center, #0a0a0a, #000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      letter-spacing: 3px;
+    }
+    h1 {
+      font-size: 6rem;
+      position: relative;
+      z-index: 2;
+      text-transform: uppercase;
+      text-shadow: 0 0 25px rgba(255,255,255,0.3);
+      animation: glow 2s ease-in-out infinite alternate, fadeIn 2s ease forwards;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes glow {
+      0% { text-shadow: 0 0 15px rgba(255,255,255,0.2), 0 0 30px rgba(255,255,255,0.1); transform: scale(1); }
+      100% { text-shadow: 0 0 30px rgba(255,255,255,0.6), 0 0 60px rgba(255,255,255,0.3); transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="fireworks"></canvas>
+  <h1>SURPRISE <a href="https://scontent-mnl1-1.xx.fbcdn.net/v/t39.30808-6/295063455_382595500673031_3226786688507145347_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHKg26MfB005R40hTWkr99ZpmFrRPFVbfGmYWtE8VVt8SUThBseyciP78yyHCDmiJIroZEB3M5RCeKbljFrD9VW&_nc_ohc=uDu6P6EsoCIQ7kNvwFzWT3j&_nc_oc=AdkJYlmKQbh7EnBH3Vuf4Hn64qoDa4m3pi69MqU0I1bGtyl9DCA0YKEfOjn7U7rqHa0&_nc_zt=23&_nc_ht=scontent-mnl1-1.xx&_nc_gid=Q61zS1mntd_RXV4wd7HyqQ&oh=00_Afc2THMgjDsOwLvITB8vNiWQ6Cx8KNMe2ggPbOdQVa-i-w&oe=68F6EBE4">🎁</a> </h1>
+  <script>
+    const canvas = document.getElementById('fireworks');
+    const ctx = canvas.getContext('2d');
+    let w, h;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    const fireworks = [];
+    const particles = [];
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    class Firework {
+      constructor() {
+        this.x = random(w * 0.2, w * 0.8);
+        this.y = h;
+        this.targetY = random(h * 0.2, h * 0.5);
+        this.speed = random(5, 8);
+        this.color = `hsl(${random(0,360)},100%,60%)`;
+        this.exploded = false;
+      }
+      update() {
+        this.y -= this.speed;
+        if (this.y <= this.targetY && !this.exploded) {
+          this.exploded = true;
+          for (let i = 0; i < 60; i++) {
+            particles.push(new Particle(this.x, this.y, this.color));
+          }
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+    class Particle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.angle = random(0, Math.PI * 2);
+        this.speed = random(1, 6);
+        this.life = 100;
+        this.alpha = 1;
+      }
+      update() {
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed + 0.2;
+        this.life--;
+        this.alpha = this.life / 100;
+      }
+      draw() {
+        ctx.globalAlpha = this.alpha;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }
+    function loop() {
+      ctx.fillStyle = 'rgba(0,0,0,0.2)';
+      ctx.fillRect(0, 0, w, h);
+      if (Math.random() < 0.05) fireworks.push(new Firework());
+      fireworks.forEach((f, i) => {
+        f.update();
+        f.draw();
+        if (f.exploded) fireworks.splice(i, 1);
+      });
+      particles.forEach((p, i) => {
+        p.update();
+        p.draw();
+        if (p.life <= 0) particles.splice(i, 1);
+      });
+      requestAnimationFrame(loop);
+    }
+    loop();
+  </script>
+  <script src="/assets/disableInspect.js"></script>
+</body>
+</html>
